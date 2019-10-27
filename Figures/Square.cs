@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using static WebApplication1.Figures.Figure;
 
 namespace WebApplication1.Figures
 {
-    public class Rectangle: Figure
+    public class Square: Figure
     {
         public int getArea()
         {
-            return (sideA * sideB);
+            return (sideA * sideA);
         }
     }
 }

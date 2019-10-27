@@ -7,18 +7,11 @@ namespace WebApplication1.Figures
 {
     public class Figure
     {
-        public int sideA;
-        public int sideB;
+        public int sideA { get; set; }
+        public int sideB { get; set; }
+        public int height { get; set; }
+        public int radius { get; set; }
 
-        public void SetSideA(int A)
-        {
-            sideA = A;
-        }
 
-        public void SetSideB(int B)
-        {
-            sideB = B;
-        }
     }
-
 }
