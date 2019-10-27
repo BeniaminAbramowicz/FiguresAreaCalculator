@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class HomeController : Controller
+    public class ResultController : Controller
     {
-        public ActionResult Index()
+        
+        public ActionResult Complete(CalcResult cResult1)
         {
-            return View();
+            return View(cResult1);
         }
     }
 }

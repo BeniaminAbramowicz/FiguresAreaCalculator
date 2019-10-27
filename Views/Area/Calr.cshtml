@@ -1,0 +1,10 @@
+﻿@model WebApplication1.Models.CalcResult
+@{
+    ViewBag.Title = "Calr";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Complete</h2>
+
+
+<p>Pole powierzchni wybranej figury wynosi: @Html.DisplayFor(Model => Model.Result)</p>
