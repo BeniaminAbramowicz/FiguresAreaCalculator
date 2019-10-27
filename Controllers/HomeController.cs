@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services;
 using WebApplication1.Models;
 using WebApplication1.Figures;
 
@@ -21,9 +22,9 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        [HttpPost]
+        [WebMethod]
         [ActionName("Count")]
-        public ActionResult Count(string sides, string figure)
+        public JsonResult Count(string sides, string figure)
         {
             int figArea = 0;
             int sA = 0;
@@ -70,7 +71,9 @@ namespace WebApplication1.Controllers
 
             var cResult1 = new CalcResult { Result = figArea };
 
-            return RedirectToAction("Calr", cResult1);
+
+            //return Json(new { success = true, message = "Pole powierzchni figury wynosi: " + figArea }, JsonRequestBehavior.AllowGet);
+            return Json(figArea, JsonRequestBehavior.AllowGet);
 
         }
         public ActionResult Calr(CalcResult newResult)
