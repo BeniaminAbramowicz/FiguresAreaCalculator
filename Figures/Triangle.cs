@@ -7,7 +7,7 @@ namespace WebApplication1.Figures
 {
     public class Triangle: Figure
     {
-        public int getArea()
+        public double getArea()
         {
             return (sideA * height / 2);
         }

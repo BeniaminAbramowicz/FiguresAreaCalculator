@@ -7,10 +7,10 @@ namespace WebApplication1.Figures
 {
     public class Figure
     {
-        public int sideA { get; set; }
-        public int sideB { get; set; }
-        public int height { get; set; }
-        public int radius { get; set; }
+        public double sideA { get; set; }
+        public double sideB { get; set; }
+        public double height { get; set; }
+        public double radius { get; set; }
 
 
     }

@@ -7,7 +7,7 @@ namespace WebApplication1.Figures
 {
     public class Square: Figure
     {
-        public int getArea()
+        public double getArea()
         {
             return (sideA * sideA);
         }

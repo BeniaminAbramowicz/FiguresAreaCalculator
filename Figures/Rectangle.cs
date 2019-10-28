@@ -8,7 +8,7 @@ namespace WebApplication1.Figures
 {
     public class Rectangle: Figure
     {
-        public int getArea()
+        public double getArea()
         {
             return (sideA * sideB);
         }

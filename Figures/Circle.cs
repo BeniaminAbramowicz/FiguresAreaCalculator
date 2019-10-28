@@ -7,9 +7,9 @@ namespace WebApplication1.Figures
 {
     public class Circle:Figure
     {
-        public int getArea()
+        public double getArea()
         {
-            return (int) (radius * radius * Math.PI);
+            return (radius * radius * Math.PI);
         }
     }
 }

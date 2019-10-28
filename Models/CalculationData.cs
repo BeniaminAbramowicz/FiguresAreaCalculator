@@ -5,8 +5,9 @@ using System.Web;
 
 namespace WebApplication1.Models
 {
-    public class CalcResult
+    public class CalculationData
     {
-        public int Result { get; set; }
+        public string InputData { get; set; }
+        public string ChosenFigure { get; set; }
     }
 }

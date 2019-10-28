@@ -1,31 +1,70 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Obliczanie pola powierzchni figur";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<html>
+<body>
+    <h2>Obliczanie pól figur</h2>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <div id="calcForm">
+        <select id="select" name="figure">
+            <option selected disabled hidden value="">-- Wybierz figurę --</option>
+            <option id="square" value="square">Kwadrat</option>
+            <option id="rectangle" value="rectangle">Prostokąt</option>
+            <option id="triangle" value="triangle">Trójkąt</option>
+            <option id="circle" value="circle">Koło</option>
+        </select>       
+        <div id="dataAndButton" style="visibility:hidden">
+            <br />
+            <p id="instructions"></p>
+            <input id="calcData" type="text" name="calcData" />
+            <input type="button" id="calculateArea" value="Oblicz pole">
+        </div>
+    </div>
+    <br />
+    <p id="figureArea"></p>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#calculateArea").click(function () {
+                var inputData = $('#calcData').val();
+                var chosenFigure = $('#select').val();
+                var calculationData = { InputData: inputData, ChosenFigure: chosenFigure }
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: "{calculationData:" + JSON.stringify(calculationData) + "}",
+                    url: "/Home/Count",
+                    dataType: "json",
+                    success: function (data) {
+                        $('#figureArea').text('Pole powierzchni wybranej figury - ' + $('#select option:selected').text() + ' wynosi: ' + data);
+                    },
+                    error: function (result) {
+                        alert("Wystąpił błąd");
+                    }
+                });
+            });
+        });
+
+        $("#select").change(function () {
+            $('#dataAndButton').css('visibility', 'visible');
+            switch ($('#select').val()) {
+                case 'square':
+                    $('#instructions').text("Wprowadź pojedynczą wartość - długość boku kwadratu. Jeśli długość jest liczbą dziesiętną jako separatora dziesiętnego należy użyć przecinka.")
+                    break;
+                case 'rectangle':
+                    $('#instructions').text("Wprowadź długość pierwszego i drugiego boku kwadratu oddzielając wartości znakiem spacji. Jeśli długość jest liczbą dziesiętną jako separatora dziesiętnego należy użyć przecinka.")
+                    break;
+                case 'triangle':
+                    $('#instructions').text("Wprowadź długość podstawy trójkąta i jego wysokość oddzielając wartości znakiem spacji. Jeśli długość lub wysokość jest liczbą dziesiętną jako separatora dziesiętnego należy użyć przecinka.")
+                    break;
+                case 'circle':
+                    $('#instructions').text("Wprowadź pojedynczą wartość - promień koła. Jeśli promień jest liczbą dziesiętną jako separatora dziesiętnego należy użyć przecinka.")
+                    break;  
+            }
+        });
+    </script>
+</body>
+</html>
