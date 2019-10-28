@@ -11,7 +11,5 @@ namespace WebApplication1.Figures
         public double sideB { get; set; }
         public double height { get; set; }
         public double radius { get; set; }
-
-
     }
 }

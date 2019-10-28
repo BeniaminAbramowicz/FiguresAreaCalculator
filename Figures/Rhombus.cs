@@ -5,11 +5,11 @@ using System.Web;
 
 namespace WebApplication1.Figures
 {
-    public class Circle: Figure
+    public class Rhombus: Figure
     {
         public double getArea()
         {
-            return (radius * radius * Math.PI);
+            return (sideA * height);
         }
     }
 }

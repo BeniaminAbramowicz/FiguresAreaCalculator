@@ -13,6 +13,8 @@ namespace WebApplication1
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
+            bundles.Add(new ScriptBundle("~/bundles/myscripts").Include("~/Scripts/myscripts.js"));
+            bundles.Add(new StyleBundle("~/Content/mystyles").Include("~/Content/mystyles.css"));
 
             // Użyj wersji deweloperskiej biblioteki Modernizr do nauki i opracowywania rozwiązań. Następnie, kiedy wszystko będzie
             // gotowe do produkcji, użyj narzędzia do kompilowania ze strony https://modernizr.com, aby wybrać wyłącznie potrzebne testy.
