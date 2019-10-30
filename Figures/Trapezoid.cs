@@ -9,7 +9,7 @@ namespace WebApplication1.Figures
     {
         public double getArea()
         {
-            return ((sideA + sideB) * height) / 2;
+            return ((SideA + SideB) * Height) / 2;
         }
     }
 }

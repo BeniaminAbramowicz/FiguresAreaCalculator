@@ -3,24 +3,31 @@
     ViewBag.Title = "Obliczanie pola powierzchni figur płaskich";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Obliczanie pola powierzchni figur płaskich</h2>
-<br />
-<div id="calcForm">
-    <select id="select" name="figure">
-        <option selected disabled hidden value="">-- Wybierz figurę --</option>
-        <option id="square" value="square">Kwadrat</option>
-        <option id="rectangle" value="rectangle">Prostokąt</option>
-        <option id="triangle" value="triangle">Trójkąt</option>
-        <option id="circle" value="circle">Koło</option>
-        <option id="trapezoid" value="trapezoid">Trapez</option>
-        <option id="rhombus" value="rhombus">Romb</option>
-    </select>
-    <div id="dataAndButton">
+<div id="mainContainer">
+    <div id="calcForm" class="form-group">
+        <h2>Obliczanie pola powierzchni figur płaskich</h2>
         <br />
-        <p id="instructions"></p>
-        <input id="calcData" type="text" name="calcData" />
-        <input type="button" id="calculateArea" value="Oblicz pole">
-    </div>
+        <select class="form-control" id="select" name="figure">
+            <option selected disabled hidden value="">-- Wybierz figurę --</option>
+            <option id="square" value="square">Kwadrat</option>
+            <option id="rectangle" value="rectangle">Prostokąt</option>
+            <option id="triangle" value="triangle">Trójkąt</option>
+            <option id="circle" value="circle">Koło</option>
+            <option id="trapezoid" value="trapezoid">Trapez</option>
+            <option id="rhombus" value="rhombus">Romb</option>
+        </select>
+        <br />
+        <br />
+        <div id="dataAndButton" class="form-inline">
+            <br />
+            <p id="instructions"></p>
+            <br />
+            <input id="calcData" type="text" class="form-control" name="calcData" />
+            <input type="button" class="btn btn-primary form-control" id="calculateArea" value="Oblicz pole">
+            <br />
+            <br />
+            <br />
+            <h4 id="figureArea"></h4>
+        </div>
+    </div>   
 </div>
-<br />
-<p id="figureArea"></p>

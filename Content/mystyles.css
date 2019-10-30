@@ -1,3 +1,50 @@
-﻿#dataAndButton {
-    visibility:hidden;
+﻿body {
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+}
+div.container.body-content{
+    height:100%;
+}
+#dataAndButton {
+    visibility: hidden;
+    display: inline-block;
+    position: absolute;
+    width: 50%;
+    left:25.5%;
+    text-align: justify;
+}
+#mainContainer {
+    width: 100%;
+    height: 90%;
+    position: relative;
+}
+#calcForm {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+select {
+    display: inline-block;
+    position: absolute;
+    left: 38%;
+}
+#figureArea {
+    text-align: center;
+    clear:left;
+}
+#calcData{
+    display:inline-block;
+    float:left;
+}
+#calculateArea{
+    display:inline-block;
+    float:left;
+}
+h2{
+    text-align:center;
+}
+#instructions{
+    text-align:justify;
 }

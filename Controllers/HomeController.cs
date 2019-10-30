@@ -27,7 +27,7 @@ namespace WebApplication1.Controllers
             {
                 case "square":
                     Square sq = new Square();
-                    sq.sideA = Convert.ToDouble(calculationData.InputData.Trim());
+                    sq.SideA = Convert.ToDouble(calculationData.InputData.Trim());
                     figArea = Math.Round(sq.getArea(), 3);
                     break;
 
@@ -36,15 +36,15 @@ namespace WebApplication1.Controllers
                     numbers = calculationData.InputData.Trim().Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
                     sA = Convert.ToDouble(numbers[0]);
                     sB = Convert.ToDouble(numbers[1]);
-                    rec.sideA = sA;
-                    rec.sideB = sB;
+                    rec.SideA = sA;
+                    rec.SideB = sB;
                     figArea = Math.Round(rec.getArea(), 3);
                     break;
 
                 case "circle":
                     Circle cir = new Circle();
                     rad = Convert.ToDouble(calculationData.InputData.Trim());
-                    cir.radius = rad;
+                    cir.Radius = rad;
                     figArea = Math.Round(cir.getArea(), 3);
                     break;
 
@@ -53,8 +53,8 @@ namespace WebApplication1.Controllers
                     numbers = calculationData.InputData.Trim().Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
                     sA = Convert.ToDouble(numbers[0]);
                     h = Convert.ToDouble(numbers[1]);
-                    tri.sideA = sA;
-                    tri.height = h;
+                    tri.SideA = sA;
+                    tri.Height = h;
                     figArea = Math.Round(tri.getArea(), 3);
                     break;
 
@@ -64,9 +64,9 @@ namespace WebApplication1.Controllers
                     sA = Convert.ToDouble(numbers[0]);
                     sB = Convert.ToDouble(numbers[1]);
                     h = Convert.ToDouble(numbers[2]);
-                    trap.sideA = sA;
-                    trap.sideB = sB;
-                    trap.height = h;
+                    trap.SideA = sA;
+                    trap.SideB = sB;
+                    trap.Height = h;
                     figArea = Math.Round(trap.getArea(), 3);
                     break;
 
@@ -75,8 +75,8 @@ namespace WebApplication1.Controllers
                     numbers = calculationData.InputData.Trim().Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
                     sA = Convert.ToDouble(numbers[0]);
                     h = Convert.ToDouble(numbers[1]);
-                    rh.sideA = sA;
-                    rh.height = h;
+                    rh.SideA = sA;
+                    rh.Height = h;
                     figArea = Math.Round(rh.getArea(), 3);
                     break;
             }

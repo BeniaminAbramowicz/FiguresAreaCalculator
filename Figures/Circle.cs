@@ -9,7 +9,7 @@ namespace WebApplication1.Figures
     {
         public double getArea()
         {
-            return (radius * radius * Math.PI);
+            return (Radius * Radius * Math.PI);
         }
     }
 }
