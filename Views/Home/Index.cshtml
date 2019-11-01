@@ -3,11 +3,9 @@
     ViewBag.Title = "Obliczanie pola powierzchni figur płaskich";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h2>Obliczanie pola powierzchni figur płaskich</h2>
 <div id="mainContainer">
-    <div id="calcForm" class="form-group">
-        <h2>Obliczanie pola powierzchni figur płaskich</h2>
-        <br />
-        <select class="form-control" id="select" name="figure">
+        <select id="select" name="figure">
             <option selected disabled hidden value="">-- Wybierz figurę --</option>
             <option id="square" value="square">Kwadrat</option>
             <option id="rectangle" value="rectangle">Prostokąt</option>
@@ -18,16 +16,8 @@
         </select>
         <br />
         <br />
-        <div id="dataAndButton">
-            <br />
-            <p id="instructions"></p>
-            <br />
-            <input id="calcData" type="text" class="form-control" name="calcData" />
-            <input type="button" class="btn btn-primary form-control" id="calculateArea" value="Oblicz pole">
-            <br />
-            <br />
-            <br />
-            <h4 id="figureArea"></h4>
-        </div>
-    </div>   
+        <p id="instructions" class="invi"></p>
+        <input id="calcData" type="text" class="invi" name="calcData">
+        <input type="button" class="btn btn-primary invi" id="calculateArea" value="Oblicz pole">
+        <h4 id="figureArea" class="invi"></h4>
 </div>

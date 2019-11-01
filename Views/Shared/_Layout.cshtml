@@ -5,13 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/mystyles")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/myscripts")
-    @Styles.Render("~/Content/mystyles")
     @RenderSection("scripts", required: false)
 </head>
 <body>
@@ -28,7 +26,8 @@
     <div class="container body-content">
         @RenderBody()
         @Scripts.Render("~/bundles/myscripts")
-        @Styles.Render("~/Content/mystyles")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)
         <hr />
         <footer class="container-fluid w-100 py-2 bg-dark">

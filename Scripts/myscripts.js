@@ -21,7 +21,7 @@
 });
 
 $("#select").change(function () {
-    $('#dataAndButton').css('visibility', 'visible');
+    $('.invi').css('visibility', 'visible');
     switch ($('#select').val()) {
         case 'square':
             $('#instructions').text("Wprowadź pojedynczą wartość - długość boku kwadratu. Jeśli długość jest liczbą dziesiętną jako separatora dziesiętnego należy użyć przecinka.")
