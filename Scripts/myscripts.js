@@ -6,7 +6,7 @@
         $.ajax({
             type: "POST",
             contentType: "application/json; charset=utf-8",
-            data: "{calculationData:" + JSON.stringify(calculationData) + "}",
+            data: JSON.stringify(calculationData),
             url: "/Home/Count",
             dataType: "json",
             success: function (data) {
@@ -16,6 +16,7 @@
                 alert("Wystąpił błąd");
             }
         });
+        
     });
 });
 

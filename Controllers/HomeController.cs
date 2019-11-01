@@ -15,6 +15,7 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        [HttpPost]
         public JsonResult Count(CalculationData calculationData)
         {
             double figArea = 0;
@@ -80,7 +81,7 @@ namespace WebApplication1.Controllers
                     figArea = Math.Round(rh.getArea(), 3);
                     break;
             }
-            return Json(figArea, JsonRequestBehavior.AllowGet);
+            return Json(figArea);
         }
    
     }
