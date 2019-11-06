@@ -4,7 +4,7 @@ Small C# application using ASP.NET MVC framework for calculating area of figures
 
 ## Technologies
 - ASP.NET MVC framework
-- Front-end: Bootstrap, JavaScript/jQuery
+- Front-end: Bootstrap, JavaScript/jQuery, Ajax
 
 ## Running the application
 Application can be run by opening it's solution in Visual Studio, building it and running (default shortcut ctrl + F5)
