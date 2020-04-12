@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace WebApplication1.Figures
+﻿namespace WebApplication1.Figures
 {
-    public class Rhombus: Figure
+    public class Rhombus: IFigure
     {
-        public double getArea()
+        public double SideA { get; set; }
+        public double Height { get; set; }
+        public double GetArea()
         {
             return (SideA * Height);
         }

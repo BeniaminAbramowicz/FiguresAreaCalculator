@@ -29,7 +29,7 @@ namespace WebApplication1.Controllers
                 case "square":
                     Square sq = new Square();
                     sq.SideA = Convert.ToDouble(calculationData.InputData.Trim());
-                    figArea = Math.Round(sq.getArea(), 3);
+                    figArea = Math.Round(sq.GetArea(), 3);
                     break;
 
                 case "rectangle":
@@ -39,14 +39,14 @@ namespace WebApplication1.Controllers
                     sB = Convert.ToDouble(numbers[1]);
                     rec.SideA = sA;
                     rec.SideB = sB;
-                    figArea = Math.Round(rec.getArea(), 3);
+                    figArea = Math.Round(rec.GetArea(), 3);
                     break;
 
                 case "circle":
                     Circle cir = new Circle();
                     rad = Convert.ToDouble(calculationData.InputData.Trim());
                     cir.Radius = rad;
-                    figArea = Math.Round(cir.getArea(), 3);
+                    figArea = Math.Round(cir.GetArea(), 3);
                     break;
 
                 case "triangle":
@@ -56,7 +56,7 @@ namespace WebApplication1.Controllers
                     h = Convert.ToDouble(numbers[1]);
                     tri.SideA = sA;
                     tri.Height = h;
-                    figArea = Math.Round(tri.getArea(), 3);
+                    figArea = Math.Round(tri.GetArea(), 3);
                     break;
 
                 case "trapezoid":
@@ -68,7 +68,7 @@ namespace WebApplication1.Controllers
                     trap.SideA = sA;
                     trap.SideB = sB;
                     trap.Height = h;
-                    figArea = Math.Round(trap.getArea(), 3);
+                    figArea = Math.Round(trap.GetArea(), 3);
                     break;
 
                 case "rhombus":
@@ -78,7 +78,7 @@ namespace WebApplication1.Controllers
                     h = Convert.ToDouble(numbers[1]);
                     rh.SideA = sA;
                     rh.Height = h;
-                    figArea = Math.Round(rh.getArea(), 3);
+                    figArea = Math.Round(rh.GetArea(), 3);
                     break;
             }
             return Json(figArea);

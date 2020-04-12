@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace WebApplication1.Figures
+﻿namespace WebApplication1.Figures
 {
-    public class Trapezoid: Figure
+    public class Trapezoid: IFigure
     {
-        public double getArea()
+        public double SideA { get; set; }
+        public double SideB { get; set; }
+        public double Height { get; set; }
+        public double GetArea()
         {
             return ((SideA + SideB) * Height) / 2;
         }

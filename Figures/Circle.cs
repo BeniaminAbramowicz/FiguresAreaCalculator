@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace WebApplication1.Figures
 {
-    public class Circle: Figure
+    public class Circle : IFigure
     {
-        public double getArea()
+        public double Radius { get; set; }
+        public double GetArea()
         {
             return (Radius * Radius * Math.PI);
         }
